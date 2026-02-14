@@ -35,7 +35,7 @@ async function searchUser() {
     profileContainer.classList.add("hidden");
     errorContainer.classList.add("hidden");
 
-    // https://api.github.com/users/burakorkmez
+    // https://api.github.com/users/codewithabubakr
     const response = await fetch(`https://api.github.com/users/${username}`);
     if (!response.ok) throw new Error("User not found");
 
@@ -82,15 +82,14 @@ function displayRepos(repos) {
       </a>
       <p class="repo-description">${repo.description || "No description available"}</p>
       <div class="repo-meta">
-        ${
-          repo.language
-            ? `
+        ${repo.language
+        ? `
           <div class="repo-meta-item">
             <i class="fas fa-circle"></i> ${repo.language}
           </div>
         `
-            : ""
-        }
+        : ""
+      }
         <div class="repo-meta-item">
           <i class="fas fa-star"></i> ${repo.stargazers_count}
         </div>
@@ -161,5 +160,5 @@ function formatDate(dateString) {
   });
 }
 
-searchInput.value = "burakorkmez";
+searchInput.value = "codewithabubakr";
 searchUser();
